@@ -1,6 +1,6 @@
 import {
   getAttendeeBadge
-} from "../chunk-KBBIQDEP.mjs";
+} from "../chunk-PM4GLPWT.mjs";
 import "../chunk-JRO4E4TH.mjs";
 import "../chunk-JV6GRE7Y.mjs";
 export {
