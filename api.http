@@ -2,7 +2,34 @@ POST http://localhost:3333/events
 Content-Type: application/json
 
 {
-   "title": "Unite Summit",
-   "details": "Um evento para quem é apaixonado por programa",
-   "maximumAttendees": 100
+   "title": "Novo evento 2",
+   "details": "null",
+   "maximumAttendees": 1
 }
+
+
+###
+
+POST http://localhost:3333/events/b6cb5673-86f6-41e8-93d5-1ed7cc36bc8d/attendees
+Content-Type: application/json
+
+{
+   "name": "Eduardo Simon",
+   "email": "eduardosimon.trabalho@gmail.com"
+}
+
+###
+
+GET http://localhost:3333/events/b6cb5673-86f6-41e8-93d5-1ed7cc36bc8d
+
+###
+
+GET http://localhost:3333/attendees/3/badge
+
+###
+
+GET http://localhost:3333/attendees/3/check-in
+
+###
+
+GET http://localhost:3333/events/b6cb5673-86f6-41e8-93d5-1ed7cc36bc8d/attendees?query=eduardo

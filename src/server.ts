@@ -1,12 +1,51 @@
 import fastify from "fastify";
-import { z } from "zod";
-import { PrismaClient } from "@prisma/client";
 
-const app = fastify({ logger: true });
+import fastifySwagger from "@fastify/swagger";
+import fastifySwaggerUI from "@fastify/swagger-ui";
+import fastifyCors from "@fastify/cors";
 
-const prisma = new PrismaClient({
-  log: ["query"],
+import { serializerCompiler, validatorCompiler, jsonSchemaTransform, ZodTypeProvider } from "fastify-type-provider-zod";
+import { createEvent } from "./routes/create-event";
+import { registerForEvent } from "./routes/register-for-event";
+import { getEvent } from "./routes/get-event";
+import { getAttendeeBadge } from "./routes/get-attendee-badge";
+import { getEventAttendees } from "./routes/get-event-attendees";
+import { checkIn } from "./routes/check-in";
+import { errorHandler } from "./error-handler";
+
+export const app = fastify().withTypeProvider<ZodTypeProvider>();
+
+app.register(fastifyCors, {
+  origin: "*",
 });
+
+app.register(fastifySwagger, {
+  swagger: {
+    consumes: ["application/json"],
+    produces: ["application/json"],
+    info: {
+      title: "pass.in",
+      description:
+        "Especificações da API para o back-end da aplicação pass.in construída durante a NLW Unite da Rocketseat.",
+      version: "1.0.0",
+    },
+  },
+  transform: jsonSchemaTransform,
+});
+
+app.register(fastifySwaggerUI, {
+  routePrefix: "/docs",
+});
+
+app.setValidatorCompiler(validatorCompiler);
+app.setSerializerCompiler(serializerCompiler);
+
+app.register(createEvent);
+app.register(registerForEvent);
+app.register(getEvent);
+app.register(getAttendeeBadge);
+app.register(checkIn);
+app.register(getEventAttendees);
 
 // Métodos HTTP: GET, POST, PUT, DELETE, PATCH, HEAD, OPTIONS, OPTIONS, ...
 
@@ -19,29 +58,13 @@ const prisma = new PrismaClient({
 
 // Driver nativo / Query Builders / ORMs
 
-//
+// 20x => Sucesso
+// 30x => Redirecionamento
+// 40x => Erro do cliente (Erro em alguma informação enviada por QUEM está fazendo a chamada para a API)
+// 50x => Erro do servidor (Um erro que está acontecendo INDEPENDENTE do que está sendo enviado para o servidor)
 
-app.post("/events", async (request, reply) => {
-  const createEventSchema = z.object({
-    title: z.string().min(4),
-    details: z.string().nullable(),
-    maximumAttendees: z.number().int().positive().nullable(),
-  });
+app.setErrorHandler(errorHandler);
 
-  const data = createEventSchema.parse(request.body);
-
-  const event = await prisma.event.create({
-    data: {
-      title: data.title,
-      details: data.details,
-      maximumAttendees: data.maximumAttendees,
-      slug: new Date().toISOString(),
-    },
-  });
-
-  return reply.status(201).send({ eventId: event.id });
-});
-
-app.listen({ port: 3333 }).then(() => {
+app.listen({ port: 3333, host: "0.0.0.0" }).then(() => {
   console.log("HTTP server running!");
 });
