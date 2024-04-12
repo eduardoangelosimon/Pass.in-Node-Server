@@ -31,12 +31,9 @@ Para rodar o projeto localmente você precisará seguir algumas instruções. <b
 É necessário que o <a href="https://nodejs.org/en/download/" target="_blank">NodeJS</a> esteja instalado em sua máquina na versão 20. <br>
 Também será necessário utilizar <a href="https://classic.yarnpkg.com/lang/en/docs/install/#mac-stable" target="_blank">Yarn</a> ou <a href="https://www.npmjs.com/" target="_blank">Npm</a> para a instalação de pacotes. <br>
 
-Além disso, será necessário rodar backend desenvolvido em NodeJS
-Link para o repositório do backend: <a href="https://github.com/eduardoangelosimon/Pass.in-Node-Server" target="_blank">Backend NLW Unite</a> <br>
-
   ## Clone o repositório
 ```
-  https://github.com/eduardoangelosimon/Pass.in-React-Native.git
+  https://github.com/eduardoangelosimon/Pass.in-Node-Server.git
 ```
   ## Instale todos os pacotes
 
@@ -48,6 +45,11 @@ Link para o repositório do backend: <a href="https://github.com/eduardoangelosi
 ```
   yarn install
 ```
+
+  ## Crie um arquivo .env na raiz do projeto e adicione o seguinte código:
+  ```
+    DATABASE_URL="file:.dev.db"
+  ```
 ________________________________________________________________________________________________________________________________________________________________________________
 <div align="center">
   <p>Desenvolvido com 💙 Eduardo Angelo Simon</p> <br>
