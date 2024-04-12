@@ -7,8 +7,8 @@
   <a href="#-tecnologias">Tecnologias</a> | <a href="#-o-projeto">O Projeto</a> | <a href="#-teste-a-aplicação">Teste a Aplicação</a>
 </div>
 
-<img src="/assets/to_readme/pc-banner-passin.png">
-<img src="/assets/to_readme/Projeto-ReactJS.png">
+<img src="/assets/to_readme/events-image.png">
+<img src="/assets/to_readme/attendee-image.png">
 
   # 👷🏻 O Projeto
 Desenvolvimento de uma aplicação front-end em ReactJS, aplicação dos conceitos de Propriedades, Estados e Componentes, tipagem com Typescript, tooling com Vite, interface responsiva com TailwindCSS, consumo de API Node.js, uso de URL states.
