@@ -11,24 +11,19 @@
 <img src="/assets/to_readme/attendee-image.png">
 
   # 👷🏻 O Projeto
-Desenvolvimento de uma aplicação front-end em ReactJS, aplicação dos conceitos de Propriedades, Estados e Componentes, tipagem com Typescript, tooling com Vite, interface responsiva com TailwindCSS, consumo de API Node.js, uso de URL states.
+Desenvolvimento de uma aplicação back-end em Node.js, aplicação dos conceitos de API REST, utilizando TypeScript, Fastify como framework, integração do Prisma ORM + SQLite e Zod para validação de dados.
 
- O projeto desenvolvido e ministrado pela Rocketseat no decorrer da trilha de ReactJS da NLW Unite. O programa é uma plataforma web para visualização de usuários inscritos em eventos presenciais. O objetivo principal da aplicação é fornecer uma visão geral para o usuário sobre os dados dos integrantes inscritos nos eventos.
-
-# 🤳🏻 Funcionalidades
-
-- Visualizar participantes do evento
-- Visualizar eventos
-- Navegar nos botões de paginação
+ O projeto desenvolvido e ministrado pela Rocketseat no decorrer da trilha de NodeJS da NLW Unite. O programa é um servidor para fornecer e registrar os dados de usuários e eventos para alimentar os front-ends desenvolvidos nas outras trilhas do evento.
 
 # 🚀 Tecnologias
 Estas são as tecnologias utilizadas no desenvolvimento do projeto:
 
-- <a href="https://react.dev/" target="_blank">ReactJS</a> <br>
+- <a href="https://www.prisma.io/" target="_blank">Prisma ORM</a> <br>
 - <a href="https://www.typescriptlang.org/docs/" target="_blank">TypeScript</a> <br>
-- <a href="https://tailwindcss.com/" target="_blank">TailwindCSS</a> <br>
-- <a href="https://vitejs.dev/" target="_blank">Vite</a> <br>
 - <a href="https://nodejs.org/en" target="_blank">NodeJS</a> <br>
+- <a href="https://fastify.dev/" target="_blank">Fastify</a> <br>
+- <a href="https://www.sqlite.org/" target="_blank">SQLite</a> <br>
+- <a href="https://zod.dev/" target="_blank">Zod</a> <br>
 
 # 💻 Teste a aplicação
 Para rodar o projeto localmente você precisará seguir algumas instruções. <br>
