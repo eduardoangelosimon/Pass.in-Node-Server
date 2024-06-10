@@ -13,7 +13,7 @@
   # 👷🏻 O Projeto
 Desenvolvimento de uma aplicação back-end em Node.js, aplicação dos conceitos de API REST, utilizando TypeScript, Fastify como framework, integração do Prisma ORM + SQLite e Zod para validação de dados.
 
- O projeto desenvolvido e ministrado pela Rocketseat no decorrer da trilha de NodeJS da NLW Unite. O programa é um servidor para fornecer e registrar os dados de usuários e eventos para alimentar os front-ends desenvolvidos nas outras trilhas do evento.
+ O projeto foi desenvolvido e ministrado pela Rocketseat no decorrer da trilha de NodeJS da NLW Unite. O programa é um servidor para fornecer e registrar os dados de usuários e eventos para alimentar os front-ends desenvolvidos nas outras trilhas do evento.
 
 # 🚀 Tecnologias
 Estas são as tecnologias utilizadas no desenvolvimento do projeto:
